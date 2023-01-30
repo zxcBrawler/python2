@@ -23,8 +23,15 @@ def yearType(count):
 print('Input year')
 year = int(input())
 
-if (year % 4 == 0 or year % 400 == 0):
-    print('Leap year')
-    yearType(1)
+if (year % 4 != 0):
+    yearType(0)
 else:
-    yearType(0)   
+    if (year % 100 == 0):
+        if (year % 400 == 0):
+         print('Leap year')
+         yearType(1)
+        else:
+            yearType(0)
+    else:
+        print('Leap year')
+        yearType(1) 
